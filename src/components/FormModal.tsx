@@ -5,11 +5,13 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../utils/context/AuthContext";
 import { FormContext } from "../utils/context/FormContext";
 import { ModalContext } from "../utils/context/ModalContext";
-import { userSchemaSignup, userSchemaLogin } from "../utils/form";
+import { userSchemaLogin, userSchemaSignup } from "../utils/form";
 
 function FormModal() {
   const { showModal, setShowModal } = useContext(ModalContext);
-  const { user, signup, login, loading } = useContext(AuthContext);
+  // TODO: Loading
+  // const { signup, login, loading } = useContext(AuthContext);
+  const { signup, login } = useContext(AuthContext);
   const { isSignupForm, setIsSignupForm } = useContext(FormContext);
   const {
     handleSubmit,
