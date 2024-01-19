@@ -1,5 +1,11 @@
+import "./firebase.config";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <h1 className="display-1">Hello</h1>
+    </>
+  );
 }
 
 export default App;
