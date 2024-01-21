@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import { AuthProvider } from "./utils/context/AuthContext";
 import { FormProvider } from "./utils/context/FormContext";
 import { ModalProvider } from "./utils/context/ModalContext";
+import HeaderBar from "./components/HeaderBar";
+import { NavigationProvider } from "./utils/context/NavigationContext";
 
 function App() {
   return (
@@ -11,11 +13,13 @@ function App() {
       <AuthProvider>
         <ModalProvider>
           <FormProvider>
-            {/* <HeaderBar /> */}
-            {/* <FormModal /> */}
-            <Routes>
-              <Route path="/" element={<Home />} />
-            </Routes>
+            <NavigationProvider>
+              <HeaderBar />
+              {/* <FormModal /> */}
+              <Routes>
+                <Route path="/" element={<Home />} />
+              </Routes>
+            </NavigationProvider>
           </FormProvider>
         </ModalProvider>
       </AuthProvider>
