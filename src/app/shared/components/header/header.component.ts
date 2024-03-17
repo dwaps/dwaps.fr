@@ -126,6 +126,15 @@ export class HeaderComponent implements AfterViewInit {
     this.cubes.forEach((c) => c.scale.set(...this.cubesConfig.initialScale));
   }
 
+  onWindowResize() {
+    this.canvasWidth = innerWidth;
+
+    this.camera.aspect = this.canvasWidth / this.canvasHeight;
+    this.camera.updateProjectionMatrix();
+
+    this.renderer.setSize(this.canvasWidth, this.canvasHeight);
+  }
+
   configCubesAndLaunchAnimation() {
     const loadingManager = new THREE.LoadingManager();
     this.textureLoader = new THREE.TextureLoader(loadingManager);
