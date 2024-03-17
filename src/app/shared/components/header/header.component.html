@@ -1,3 +1,8 @@
 <div class="header">
-  <canvas #canvas></canvas>
+  <canvas
+    #canvas
+    (pointermove)="onPointerMove($event)"
+    (mouseleave)="onMouseLeave()"
+    (click)="onClick($event)"
+  ></canvas>
 </div>
