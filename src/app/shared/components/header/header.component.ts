@@ -26,6 +26,14 @@ interface MeshConfig {
 export class HeaderComponent implements AfterViewInit {
   @ViewChild('canvas') public canvas?: ElementRef<HTMLCanvasElement>;
 
+  canvasWidth = innerWidth;
+  canvasHeight = 100;
+
+  links: Map<string, string> = new Map([
+    ['github', 'https://github.com/dwaps'],
+    ['linkedin', 'https://www.linkedin.com/in/dwaps-formation/'],
+  ]);
+
   clock!: THREE.Clock;
   renderer!: THREE.WebGLRenderer;
   scene!: THREE.Scene;
@@ -52,14 +60,14 @@ export class HeaderComponent implements AfterViewInit {
       canvas: this.canvas?.nativeElement,
       alpha: true,
     });
-    this.renderer.setSize(innerWidth / 4, 100);
+    this.renderer.setSize(this.canvasWidth, this.canvasHeight);
     this.renderer.setPixelRatio(devicePixelRatio);
   }
 
   configCamera() {
     this.camera = new THREE.PerspectiveCamera(
       60,
-      innerWidth / 4 / 100,
+      this.canvasWidth / this.canvasHeight,
       0.1,
       1200
     );
@@ -69,8 +77,8 @@ export class HeaderComponent implements AfterViewInit {
   }
 
   onPointerMove(event: PointerEvent) {
-    this.pointer.x = (event.clientX / innerWidth) * 2 - 1;
-    this.pointer.y = (event.clientY / innerHeight) * 2 + 1;
+    this.pointer.x = (event.clientX / this.canvasWidth) * 2 - 1;
+    this.pointer.y = -(event.clientY / this.canvasHeight) * 2 + 1;
 
     const updateMesh = (cube1: THREE.Mesh, cube2: THREE.Mesh) => {
       cube1.scale.set(...this.cubesConfig.minScale);
@@ -95,9 +103,13 @@ export class HeaderComponent implements AfterViewInit {
   }
 
   onClick(event: MouseEvent) {
-    this.pointer.x = (event.clientX / innerWidth) * 2 - 1;
-    this.pointer.y = (event.clientY / innerHeight) * 2 + 1;
-    console.log('yeah');
+    const [cube1, cube2] = this.cubes;
+
+    this.raycaster.setFromCamera(this.pointer, this.camera);
+    const intersects = this.raycaster.intersectObjects(this.cubes);
+    for (let intersect of intersects) {
+      window.open(this.links.get(intersect.object.name), '_blank');
+    }
   }
 
   onMouseLeave() {
@@ -179,13 +191,6 @@ export class HeaderComponent implements AfterViewInit {
         c.rotation.z += (i % 2 ? 0.9 : -1) * delta;
       }
     });
-
-    this.raycaster.setFromCamera(this.pointer, this.camera);
-    const intersects = this.raycaster.intersectObjects(this.cubes);
-    // console.log(intersects);
-    // for (let mesh of intersects) {
-    //   console.log(mesh);
-    // }
 
     this.renderer.render(this.scene, this.camera);
     requestAnimationFrame(this.animate.bind(this));
