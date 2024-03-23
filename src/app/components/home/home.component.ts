@@ -12,11 +12,11 @@ import { HeaderComponent } from '../../shared/components/header/header.component
 })
 export class HomeComponent {
   textToScramble = [
-    'Bientôt, vous trouverez ici mon portfolio',
-    'Bientôt, vous trouverez ici mon portfolio',
-    'En attendant, je reste dispo',
-    "N'hésitez pas à me contacter par mail",
-    "N'hésitez pas à me contacter par mail",
-    "N'hésitez pas à me contacter par mail",
+    'Bientôt ici mon portfolio',
+    'Bientôt ici mon portfolio',
+    'Je cherche une alternance Java Angular',
+    'Je cherche une alternance Java Angular',
+    "N'hésitez pas à me contacter ! :)",
+    "N'hésitez pas à me contacter ! :)",
   ];
 }
