@@ -31,7 +31,10 @@ export class HeaderComponent implements AfterViewInit {
 
   links: Map<string, string> = new Map([
     ['github', 'https://github.com/dwaps'],
-    ['linkedin', 'https://www.linkedin.com/in/dwaps-formation/'],
+    [
+      'linkedin',
+      'https://www.linkedin.com/in/michael-cornillon-developpeur-formateur-java-angular',
+    ],
   ]);
 
   clock!: THREE.Clock;
