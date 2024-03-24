@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
     // Send SMS to my device to connect in admin mode
     this._route.queryParamMap.subscribe((qpm) => {
       if (qpm.has(this.QUERY_STRING_KEY)) {
-        this.mp.set(Math.ceil(Math.random() * environment.SMS.SALT));
+        this.mp.set(Math.ceil(Math.random() * environment.SMS.SALT!));
         this._http
           .get(
             `https://smsapi.free-mobile.fr/sendmsg?user=${
