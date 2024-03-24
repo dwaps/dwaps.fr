@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
-import { TextScrambleEffectComponent } from '../../shared/text-scramble-effect/text-scramble-effect.component';
+import { TextScrambleEffectComponent } from '../../shared/components/text-scramble-effect/text-scramble-effect.component';
 import { HeaderComponent } from '../../shared/components/header/header.component';
 
 @Component({
