@@ -1,6 +1,6 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit, signal } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from '../../../environments/environment.development';
 import { HeaderComponent } from '../../shared/components/header/header.component';
 import { TextScrambleEffectComponent } from '../../shared/components/text-scramble-effect/text-scramble-effect.component';
@@ -22,11 +22,15 @@ export class HomeComponent implements OnInit {
     "N'hésitez pas à me contacter ! :)",
   ];
 
-  mp = signal(0);
+  mp = signal(-1);
   QUERY_STRING_KEY = 'wanttoconnect';
   mpByUser = '';
 
-  constructor(private _route: ActivatedRoute, private _http: HttpClient) {
+  constructor(
+    private _route: ActivatedRoute,
+    private _router: Router,
+    private _http: HttpClient
+  ) {
     this.mp.update((v) => v);
   }
 
@@ -41,7 +45,16 @@ export class HomeComponent implements OnInit {
               environment.SMS.LOGIN
             }&pass=${environment.SMS.API_KEY}&msg=${this.mp()}`
           )
-          .subscribe();
+          .subscribe({
+            next: () => console.clear(),
+            error: () => setTimeout(() => console.clear(), 1000),
+            complete: () => console.clear(),
+          });
+        this._router.navigate([], {
+          queryParams: {
+            [this.QUERY_STRING_KEY]: null,
+          },
+        });
       }
     });
   }

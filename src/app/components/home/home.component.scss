@@ -28,5 +28,20 @@ a {
   justify-content: center;
   position: absolute;
   width: 100vw;
-  bottom: 10px;
+  bottom: 40px;
+
+  &:hover > input {
+    transform: scaleX(100%);
+  }
+
+  input {
+    transform: scaleX(5%);
+    background-color: #727272;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: all 1s;
+    width: 90px;
+    text-align: center;
+  }
 }

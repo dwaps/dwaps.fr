@@ -6,9 +6,9 @@ require("dotenv").config("./src/.env");
 
 const envVars = `export const environment = {
     SMS: {
-      API_KEY: '${process.env.SMS_API_KEY}',
-      LOGIN: '${process.env.SMS_LOGIN}',
-      SALT: ${process.env.SMS_SALT},
+      API_KEY: '${process.env.SMS_API_KEY ?? ""}',
+      LOGIN: '${process.env.SMS_LOGIN ?? ""}',
+      SALT: ${process.env.SMS_SALT ?? 0},
     },
 }`;
 

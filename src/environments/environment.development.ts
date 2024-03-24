@@ -1,7 +1,7 @@
 export const environment = {
     SMS: {
-      API_KEY: 'undefined',
-      LOGIN: 'undefined',
-      SALT: undefined,
+      API_KEY: '5muJrwUnFMrArl',
+      LOGIN: '13983060',
+      SALT: 676565,
     },
 }

@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-@if (mp() === +mpByUser) {
+@if (mp() > 0 && mp() === +mpByUser) {
 <h1>Ici, tu es libre Michael!</h1>
 } @else {
 <h1>Hello! Je m'appelle Michael Cornillon</h1>
