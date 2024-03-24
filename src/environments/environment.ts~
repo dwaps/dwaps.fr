@@ -2,6 +2,6 @@ export const environment = {
   SMS: {
     API_KEY: 'API_KEY',
     LOGIN: 'LOGIN',
-    SALT: 0000000000,
+    SALT: 000000,
   },
 };

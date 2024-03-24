@@ -22,3 +22,11 @@ a {
   color: white;
   text-align: center;
 }
+
+.user-input {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100vw;
+  bottom: 10px;
+}

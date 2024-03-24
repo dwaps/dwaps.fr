@@ -22,21 +22,24 @@ export class HomeComponent implements OnInit {
     "N'hésitez pas à me contacter ! :)",
   ];
 
-  private _mp = signal(0);
+  mp = signal(0);
+  QUERY_STRING_KEY = 'wanttoconnect';
+  mpByUser = '';
 
   constructor(private _route: ActivatedRoute, private _http: HttpClient) {
-    this._mp.update((v) => v);
+    this.mp.update((v) => v);
   }
 
   ngOnInit(): void {
+    // Send SMS to my device to connect in admin mode
     this._route.queryParamMap.subscribe((qpm) => {
-      if (qpm.has('wanttoconnect')) {
-        this._mp.set(Math.ceil(Math.random() * environment.SMS.SALT));
+      if (qpm.has(this.QUERY_STRING_KEY)) {
+        this.mp.set(Math.ceil(Math.random() * environment.SMS.SALT));
         this._http
           .get(
             `https://smsapi.free-mobile.fr/sendmsg?user=${
               environment.SMS.LOGIN
-            }&pass=${environment.SMS.API_KEY}&msg=${this._mp()}`
+            }&pass=${environment.SMS.API_KEY}&msg=${this.mp()}`
           )
           .subscribe();
       }
