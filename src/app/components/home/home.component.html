@@ -1,13 +1,17 @@
 <app-header></app-header>
 
+@if (true) {
 <h1>Hello! Je m'appelle Michael Cornillon</h1>
 <h3>Je suis développeur et formateur Java Angular</h3>
 
 <app-text-scramble-effect>
-  <p *ngFor="let text of textToScramble" #text>{{ text }}</p>
+  @for (originalText of textToScramble; track $index) {
+  <p #text>{{ originalText }}</p>
+  }
 </app-text-scramble-effect>
 
 <a
   href="mailto:ei.dwaps@gmail.com?subject=Michael,%20je%20te%20veux%20dans%20mon%20entreprise!&body=Exprimez-vous%20sur%20le%20sujet.%20Vous%20avez%20deux%20heures...🧐"
   >{{ "ei.dwaps@gmail.com" }}</a
 >
+}
