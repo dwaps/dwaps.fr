@@ -1,9 +1,10 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, ContentChild, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from '../../../environments/environment.development';
 import { HeaderComponent } from '../../shared/components/header/header.component';
 import { TextScrambleEffectComponent } from '../../shared/components/text-scramble-effect/text-scramble-effect.component';
+import { BackgroundComponent } from '../../shared/components/background/background.component';
 
 @Component({
   selector: 'app-home',

@@ -1,17 +1,21 @@
 .card {
-  margin: 30px;
+  position: absolute;
+  z-index: 9999;
+  /* top: 10vh;
   padding: 0 0 20px 0;
-  border: 1px solid #fff;
-  border-radius: 30px 10px 30px 10px;
-  box-shadow: 0.5px 0.5px 0px #fff, 1px 1px 0px #eee, 1.5px 1.5px 0px #ddd,
+  left: 1vw;
+  right: 1vw; */
+  /* border: 1px solid #fff;
+  border-radius: 30px 10px 30px 10px; */
+  /* box-shadow: 0.5px 0.5px 0px #fff, 1px 1px 0px #eee, 1.5px 1.5px 0px #ddd,
     2px 2px 0px #ccc, 2.5px 2.5px 0px #bbb, 3px 3px 0px #aaa,
     3.5px 3.5px 0px #999, 4px 4px 0px #888, 4.5px 4.5px 0px #777,
     5px 5px 0px #666, 5.5px 5.5px 0px #555, 6px 6px 0px #444,
-    6.5px 6.5px 0px #333, /* inset */ 0.5px 0.5px 0px #fff inset,
+    6.5px 6.5px 0px #333, INSET 0.5px 0.5px 0px #fff inset,
     1px 1px 0px #eee inset, 1.5px 1.5px 0px #ddd inset, 2px 2px 0px #ccc inset,
     2.5px 2.5px 0px #bbb inset, 3px 3px 0px #aaa inset,
     3.5px 3.5px 0px #999 inset, 4px 4px 0px #888 inset,
     4.5px 4.5px 0px #777 inset, 5px 5px 0px #666 inset,
     5.5px 5.5px 0px #555 inset, 6px 6px 0px #444 inset,
-    6.5px 6.5px 0px #333 inset;
+    6.5px 6.5px 0px #333 inset; */
 }

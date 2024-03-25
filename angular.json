@@ -28,7 +28,9 @@
             "inlineStyleLanguage": "scss",
             "assets": ["src/dwaps-300.gif", "src/assets"],
             "styles": ["src/styles.scss"],
-            "scripts": []
+            "scripts": [
+              "src/app/shared/components/background-lights/background-lights.js"
+            ]
           },
           "configurations": {
             "production": {
