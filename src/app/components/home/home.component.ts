@@ -16,10 +16,10 @@ export class HomeComponent implements OnInit {
   textToScramble = [
     'Bientôt ici mon portfolio',
     'Bientôt ici mon portfolio',
-    'Je cherche une alternance Java Angular',
-    'Je cherche une alternance Java Angular',
-    "N'hésitez pas à me contacter ! :)",
-    "N'hésitez pas à me contacter ! :)",
+    'Une alternance Java Angular ?',
+    'Une alternance Java Angular ?',
+    'Contactez-moi ! :)',
+    'Contactez-moi ! :)',
   ];
 
   mp = signal(-1);
