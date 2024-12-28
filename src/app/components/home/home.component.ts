@@ -14,14 +14,7 @@ import { BackgroundComponent } from '../../shared/components/background/backgrou
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
-  textToScramble = [
-    'Bientôt ici mon portfolio',
-    'Bientôt ici mon portfolio',
-    'Une alternance Java Angular ?',
-    'Une alternance Java Angular ?',
-    'Contactez-moi ! :)',
-    'Contactez-moi ! :)',
-  ];
+  textToScramble = ['Bientôt ici mon portfolio'];
 
   mp = signal(-1);
   QUERY_STRING_KEY = 'wanttoconnect';
